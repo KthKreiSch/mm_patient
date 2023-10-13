@@ -5,7 +5,6 @@ This repository contains the code base for the interview challenge 'Questionnair
 ## UML 
 
 ![Alt text](./diagrams/UML.svg)
-<img src="./diagrams/UML.svg">
 
 ## Recommended IDE Setup
 
