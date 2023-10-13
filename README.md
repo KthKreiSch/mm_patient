@@ -1,6 +1,11 @@
 # mm_patient
 
-This template should help get you started developing with Vue 3 in Vite.
+This repository contains the code base for the interview challenge 'Questionnaire - Patient'.
+
+## UML 
+
+![Alt text](./diagrams/UML.drawio.svg)
+<img src="./diagrams/UML.drawio.svg">
 
 ## Recommended IDE Setup
 
