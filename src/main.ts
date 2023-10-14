@@ -7,9 +7,15 @@ import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
-
+import { VStepper } from 'vuetify/labs/VStepper'
 const vuetify = createVuetify({
-  components,
+  components: {
+    ...components,
+    VStepper
+  },
+  theme: {
+    defaultTheme: 'dark',
+  },
   directives,
 })
 
