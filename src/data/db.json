@@ -1,0 +1,205 @@
+{
+    "timeSlots":[
+        {
+            "id":"1000",
+            "name":"anamnesis",
+            "title":"Anamnesis"
+        },
+        {
+            "id":"1001",
+            "name":"bloodwork",
+            "title":"Blood collection"
+        },
+        {
+            "id":"1002",
+            "name":"postop",
+            "title":"Post operation"
+        },
+        {
+            "id":"1003",
+            "name":"admission",
+            "title":"Admission"
+        }
+    ],
+    "timeSlotTypes":[
+        {
+            "id":"2000",
+            "name":"base",
+            "title":"Baseline"
+        },
+        {
+            "id":"2001",
+            "name":"follow",
+            "title":"Follow up"
+        }
+    ],
+    "questionnaires":[
+        {
+            "id":"3000",
+            "name": "general",
+            "title": "General",
+            "subjectType": "patient",
+            "item": []
+            
+        },
+        {
+            "id":"3001",
+            "name": "somatic",
+            "title": "Somatic",
+            "subjectType": "patient",
+            "item": []
+            
+        },
+        {
+            "id":"3002",
+            "name": "mental",
+            "title": "Mental",
+            "subjectType": "patient",
+            "item": []
+            
+        },
+        {
+            "id":"3003",
+            "name": "social",
+            "title": "Social",
+            "subjectType": "patient",
+            "item": []
+            
+        }
+    ],
+    "questionnaireElements":[
+        {
+            "linkId": "4000",
+            "text":"Firstname", 
+            "type":"text",
+            "maxLength":50,
+            "required": true
+        },
+        {
+            "linkId": "4001",
+            "text":"Lastname", 
+            "type":"text",
+            "maxLength":50,
+            "required": true
+        },
+        {
+            "linkId": "4002",
+            "text":"Age", 
+            "type":"integer",
+            "maxLength":3,
+            "required": true
+        },
+        {
+            "linkId": "4003",
+            "text":"Birthdate", 
+            "type":"date",
+            "required": true
+        },
+        {
+            "linkId": "4004",
+            "text":"City", 
+            "type":"string"
+        },
+        {
+            "linkId": "4005",
+            "text":"State", 
+            "type":"string"
+        },
+        {
+            "linkId": "4006",
+            "text":"Postal code", 
+            "type":"string"
+        },
+        {
+            "linkId": "4007",
+            "text":"Country", 
+            "type":"string"
+        },
+        {
+            "linkId": "4008",
+            "text":"Tobacco use status", 
+            "type":"group",
+            "item":[
+                {
+                    "linkId": "5000",
+                    "text": "Current",
+                    "type":"boolean"
+                },
+                {
+                    "linkId": "5001",
+                    "text": "Former",
+                    "type":"boolean"
+                },
+                {
+                    "linkId": "5002",
+                    "text": "Never",
+                    "type":"boolean"
+                }
+            ]
+        },
+        {
+            "linkId": "4009",
+            "text":"Alcohol use", 
+            "type":"boolean"
+        },
+        {
+            "linkId": "4010",
+            "text":"Drug Use", 
+            "type":"boolean"
+        },
+        {
+            "linkId": "4011",
+            "text": "Activities of daily living",
+            "type":"group",
+            "item":[
+                {
+                    "linkId": "5003",
+                    "text": "Football",
+                    "type":"boolean"
+                },
+                {
+                    "linkId": "5004",
+                    "text": "Bungee jumping",
+                    "type":"boolean"
+                },
+                {
+                    "linkId": "5005",
+                    "text": "Outdoor cycling",
+                    "type":"boolean"
+                }
+            ]
+        },
+        {
+            "linkId": "4012",
+            "text": "Occurence of memory problems",
+            "type": "boolean"
+        },
+        {
+            "linkId": "4013",
+            "text": "Duration of depressive episodes",
+            "type": "integer",
+            "enableWhen": [
+                {
+                    "question":"4016",
+                    "operator":"exists",
+                    "answerBoolean": true
+                }
+            ]
+        },
+        {
+            "linkId": "4014",
+            "text": "History of anxiety or panic attacks",
+            "type": "boolean"
+        },
+        {
+            "linkId": "4015",
+            "text": "Exercise routine",
+            "type": "boolean"
+        },
+        {
+            "linkId": "4016",
+            "text": "History of depressive episode ",
+            "type": "boolean"
+        }
+    ]
+}
