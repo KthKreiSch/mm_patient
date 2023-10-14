@@ -62,3 +62,6 @@ npm run build
 - How to assign consent to patient
     - Possibility 1: Embed solution in to EHR and assign entire workflow
     - Possibility 2: Add text field to 'Check consent' view
+- Add relational database
+- Persist QuestionnaireResponses
+- Transform test data to FHIR ressources
