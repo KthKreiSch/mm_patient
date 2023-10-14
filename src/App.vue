@@ -1,12 +1,16 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import Questionnaires from './components/Questionnaires.vue'
 
 </script>
 
 <template>
   <v-stepper :items="['Select time slot', 'Select time slot type', 'Select questionnaire', 'Check consent', 'Questionnaire']">
     <template v-slot:[`item.1`]>
-      <v-card title="Time slot" flat>...</v-card>
+      <v-card title="Time slot" flat>
+        <Suspense>
+          <Questionnaires></Questionnaires>
+        </Suspense>
+      </v-card>
     </template>
 
     <template v-slot:[`item.2`]>
@@ -21,10 +25,10 @@ import { ref } from 'vue'
     </template>
     <template v-slot:[`item.5`]>
       <v-card title="Questionnaire" flat>...</v-card>
+
     </template>
   </v-stepper>
 </template>
-
 <style scoped>
 
 v-stepper{
