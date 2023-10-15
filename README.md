@@ -21,7 +21,10 @@ Thereupon, all questionnaires of the new time point are listed.
 Here it must be checked whether the consent is available, before further questionnaires are displayed.
 ## Recommended IDE Setup
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- [VSCode](https://code.visualstudio.com/) 
+- [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) 
+- [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin)
+- [Todo Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree)
 
 ## Type Support for `.vue` Imports in TS
 
@@ -56,6 +59,10 @@ npm run dev
 npm run build
 ```
 
+## Tech stack
+- vue.js: ^3.3.4
+- json-server: ^0.17.4
+- vuetify: ^3.3.21
 
 ## Open issues
 
@@ -68,3 +75,5 @@ npm run build
 - According to FHIR, the subject of the [Consent Ressource](https://build.fhir.org/consent.html) can not only be applied to the Patient (current state of app), but also Practioner, Group
 - Object context is strongly simplified. Work with [FHIR UsageContext](https://build.fhir.org/metadatatypes.html#UsageContext)
 - Instead of modelling, timeslot-timeslotType-questionnaire relationship with [useContext](https://build.fhir.org/questionnaire-definitions.html#Questionnaire.useContext), nested [QuestionnaireItems](https://build.fhir.org/questionnaire-definitions.html#Questionnaire.item) could be possible. To discuss
+- Improve performance of filter function (getQuestionnaireElementsByQuestionnaireId) by implementing proper server
+- Open Datepicker onButtonClick
