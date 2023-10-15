@@ -113,22 +113,22 @@
         {
             "linkId": "4004",
             "text":"City", 
-            "type":"string"
+            "type":"text"
         },
         {
             "linkId": "4005",
             "text":"State", 
-            "type":"string"
+            "type":"text"
         },
         {
             "linkId": "4006",
             "text":"Postal code", 
-            "type":"string"
+            "type":"text"
         },
         {
             "linkId": "4007",
             "text":"Country", 
-            "type":"string"
+            "type":"text"
         },
         {
             "linkId": "4008",
