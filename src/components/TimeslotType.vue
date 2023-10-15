@@ -6,7 +6,7 @@ let timeslotTypes: BaseObject[] | null = await ApiService.getTimeSlotTypes().the
 
 <template>
   <v-card>
-    <h4>What type of time slot should be chosen?</h4>
+    <h4>What type of time slot should be created?</h4>
     <v-radio-group>
         <v-radio  v-for="timeslotType in timeslotTypes" :label="timeslotType.title" :value="timeslotType.id" @click="$emit('onTimeslotTypeChange', timeslotType)"></v-radio>
     </v-radio-group>

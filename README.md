@@ -65,4 +65,4 @@ npm run build
 - Add relational database
 - Persist QuestionnaireResponses
 - Transform test data to FHIR ressources
-- According to FHIR, the subject of the [Consent Ressource](https://build.fhir.org/consent.html) can not only be applied to the Patient (current state of app), but also Practioer, Group
+- According to FHIR, the subject of the [Consent Ressource](https://build.fhir.org/consent.html) can not only be applied to the Patient (current state of app), but also Practioner, Group
