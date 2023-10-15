@@ -1,7 +1,7 @@
 class ApiService {
     private baseUrl: string = `${import.meta.env.VITE_APIURL}`;
     constructor(){};
-    public async getTimeSlots(): Promise<BaseObject | null>{
+    public async getTimeSlots(): Promise<BaseObject[] | null>{
         try{
             const response = await fetch(`${this.baseUrl}/timeSlots`);
             return await response.json()
@@ -11,7 +11,7 @@ class ApiService {
         }
     };
 
-    public async getTimeSlotTypes(): Promise<BaseObject | null>{
+    public async getTimeSlotTypes(): Promise<BaseObject[] | null>{
 
         try{
             const response = await fetch(`${this.baseUrl}/timeSlotTypes`);
@@ -32,7 +32,7 @@ class ApiService {
         }
     };
 
-    public async getQuestionnaireElements(): Promise< QuestionnaireElements  | null>{
+    public async getQuestionnaireElements(): Promise< QuestionnaireElement[]  | null>{
         try{
             const response = await fetch(`${this.baseUrl}/questionnaireElements`);
             return response.json();
