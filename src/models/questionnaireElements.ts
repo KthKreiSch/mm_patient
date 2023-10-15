@@ -1,4 +1,4 @@
-interface QuestionnaireElements {
+interface QuestionnaireElement {
     linkId: string;
     text: string;
     type: string;
