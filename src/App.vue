@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import Questionnaires from './components/Questionnaires.vue'
+import { ref, type Ref } from 'vue';
+import Timeslot from './components/Timeslot.vue'
+
+let selectedTimeslot: Ref<string> = ref('');
 
 </script>
 
@@ -8,13 +11,15 @@ import Questionnaires from './components/Questionnaires.vue'
     <template v-slot:[`item.1`]>
       <v-card title="Time slot" flat>
         <Suspense>
-          <Questionnaires></Questionnaires>
+          <Timeslot @on-timeslot-change="(t) => selectedTimeslot = t"></Timeslot>
         </Suspense>
       </v-card>
     </template>
 
     <template v-slot:[`item.2`]>
-      <v-card title="Time slot type" flat>...</v-card>
+      <v-card title="Time slot type" flat>
+
+      </v-card>
     </template>
 
     <template v-slot:[`item.3`]>
