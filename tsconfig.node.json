@@ -10,6 +10,8 @@
   "compilerOptions": {
     "composite": true,
     "module": "ESNext",
-    "moduleResolution": "Bundler"
+    "moduleResolution": "Bundler",    
+    "allowImportingTsExtensions": true
+
   }
 }
