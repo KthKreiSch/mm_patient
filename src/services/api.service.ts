@@ -52,6 +52,24 @@ class ApiService {
         }
     };
 
+    public async getQuestionnaireElementsByQuestionnaire(questionnaire: Questionnaire): Promise<QuestionnaireElement[] | null> {
+        try{
+            let questionnaireElements: QuestionnaireElement[] = []
+            for(const value of questionnaire.item) {
+                const response = await fetch(`${this.baseUrl}/questionnaireElements?linkId=${value}`);
+                const elem = await response.json()
+
+                //TODO: Remove the following two lines as soon as the QuestionnaireResponse is added
+                elem[0]['answer'] = '';
+                elem[0]['visible'] = true;
+
+                questionnaireElements.push(elem[0]);
+            }
+            return Promise.resolve(questionnaireElements);
+        } catch {
+            return null;
+        }
+    }
 }
 
 

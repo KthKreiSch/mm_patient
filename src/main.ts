@@ -8,10 +8,13 @@ import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 import { VStepper } from 'vuetify/labs/VStepper'
+import { VDatePicker } from 'vuetify/labs/VDatePicker'
+
 const vuetify = createVuetify({
   components: {
     ...components,
-    VStepper
+    VStepper,
+    VDatePicker
   },
   theme: {
     defaultTheme: 'dark',

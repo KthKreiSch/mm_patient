@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { ref, type Ref } from 'vue';
-import Timeslot from './components/Timeslot.vue'
-import TimeslotType from './components/TimeslotType.vue'
-import Questionnaires from './components/Questionnaires.vue'
-import Consent from './components/Consent.vue'
+import Timeslot from './components/Timeslot.vue';
+import TimeslotType from './components/TimeslotType.vue';
+import Questionnaires from './components/Questionnaires.vue';
+import Consent from './components/Consent.vue';
+import Questionnaire from './components/Questionnaire.vue';
 
 let selectedTimeslot: Ref<string> = ref('');
 let selectedTimeslotType: Ref<string> = ref('');
@@ -45,6 +46,9 @@ let selectedTimeslotType: Ref<string> = ref('');
     </template>
     <template v-slot:[`item.5`]>
       <v-card title="Questionnaire" flat>
+        <Suspense>
+          <Questionnaire :questionnaire="selectedQuestionnaire"></Questionnaire>
+        </Suspense>
       </v-card>
 
     </template>
