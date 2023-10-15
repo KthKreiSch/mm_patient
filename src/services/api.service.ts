@@ -41,6 +41,17 @@ class ApiService {
             return null;
         }
     };
+
+    public async getPatientsById(id: string): Promise< BaseObject[]  | null>{
+        try{
+            const response = await fetch(`${this.baseUrl}/patients?id=${id}`);
+            return response.json();
+    
+        } catch {
+            return null;
+        }
+    };
+
 }
 
 

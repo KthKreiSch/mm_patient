@@ -3,6 +3,7 @@ import { ref, type Ref } from 'vue';
 import Timeslot from './components/Timeslot.vue'
 import TimeslotType from './components/TimeslotType.vue'
 import Questionnaires from './components/Questionnaires.vue'
+import Consent from './components/Consent.vue'
 
 let selectedTimeslot: Ref<string> = ref('');
 let selectedTimeslotType: Ref<string> = ref('');
@@ -36,10 +37,15 @@ let selectedTimeslotType: Ref<string> = ref('');
       </v-card>
     </template>
     <template v-slot:[`item.4`]>
-      <v-card title="Consent" flat>...</v-card>
+      <v-card title="Consent" flat>
+        <Suspense>
+          <Consent></Consent>
+        </Suspense>
+      </v-card>
     </template>
     <template v-slot:[`item.5`]>
-      <v-card title="Questionnaire" flat>...</v-card>
+      <v-card title="Questionnaire" flat>
+      </v-card>
 
     </template>
   </v-stepper>

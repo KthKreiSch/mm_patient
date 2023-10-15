@@ -33,13 +33,28 @@
             "title":"Follow up"
         }
     ],
+    "contexts": [
+        {
+            "id": "10",
+            "timeSlotType": "2000",
+            "timeslot": "1000"
+        },
+        {
+            "id": "11",
+            "timeSlotType": "2000",
+            "timeslot": "1000"
+        }
+    ],
     "questionnaires":[
         {
             "id":"3000",
             "name": "general",
             "title": "General",
+            "useContext": [
+                10, 11
+            ],
             "subjectType": "patient",
-            "item": []
+            "item": ["4000", "4001",  "4002", "4003", "4004", "4005", "4006", "4007"]
             
         },
         {
@@ -47,7 +62,7 @@
             "name": "somatic",
             "title": "Somatic",
             "subjectType": "patient",
-            "item": []
+            "item": ["4008", "4009", "4010"]
             
         },
         {
@@ -55,7 +70,7 @@
             "name": "mental",
             "title": "Mental",
             "subjectType": "patient",
-            "item": []
+            "item": ["4012", "4013", "4014", "4016"]
             
         },
         {
@@ -63,7 +78,7 @@
             "name": "social",
             "title": "Social",
             "subjectType": "patient",
-            "item": []
+            "item": ["4011", "4015"]
             
         }
     ],
@@ -200,6 +215,13 @@
             "linkId": "4016",
             "text": "History of depressive episode ",
             "type": "boolean"
+        }
+    ],
+    "patients": [
+        {
+            "id": "8000",
+            "name": "Tim",
+            "givenConsent":""
         }
     ]
 }
