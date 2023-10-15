@@ -66,3 +66,5 @@ npm run build
 - Persist QuestionnaireResponses
 - Transform test data to FHIR ressources
 - According to FHIR, the subject of the [Consent Ressource](https://build.fhir.org/consent.html) can not only be applied to the Patient (current state of app), but also Practioner, Group
+- Object context is strongly simplified. Work with [FHIR UsageContext](https://build.fhir.org/metadatatypes.html#UsageContext)
+- Instead of modelling, timeslot-timeslotType-questionnaire relationship with [useContext](https://build.fhir.org/questionnaire-definitions.html#Questionnaire.useContext), nested [QuestionnaireItems](https://build.fhir.org/questionnaire-definitions.html#Questionnaire.item) could be possible. To discuss
