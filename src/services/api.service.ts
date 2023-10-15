@@ -22,7 +22,7 @@ class ApiService {
         }
     };
 
-    public async getQuestionnaires(): Promise<Questionnaire | null>{
+    public async getQuestionnaires(): Promise<Questionnaire[] | null>{
         try{
             const response = await fetch(`${this.baseUrl}/questionnaires`);
             return response.json();
