@@ -74,3 +74,5 @@ npm run build
 - Instead of modelling, timeslot-timeslotType-questionnaire relationship with [useContext](https://build.fhir.org/questionnaire-definitions.html#Questionnaire.useContext), nested [QuestionnaireItems](https://build.fhir.org/questionnaire-definitions.html#Questionnaire.item) could be possible. To discuss
 - Improve performance of filter function (getQuestionnaireElementsByQuestionnaireId) by implementing proper server
 - Open Datepicker onButtonClick
+- Add unit tests
+- Improve style

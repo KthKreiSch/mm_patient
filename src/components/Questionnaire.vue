@@ -7,13 +7,14 @@ let questionnaireElements: Ref<QuestionnaireElement[] | null> = ref([])
 if (props.questionnaire) questionnaireElements = await ApiService.getQuestionnaireElementsByQuestionnaire(props.questionnaire).then(res => ref(res));
 
 
-setVisibility();
+setVisibility(questionnaireElements);
 //TODO: Listen to changes in form
-function setVisibility() {
+function setVisibility(questionnaireElements: Ref<QuestionnaireElement[] | null> ) {
     questionnaireElements?.value?.forEach((element, index) => {
         if (questionnaireElements.value && element.enableWhen) {
-
-            questionnaireElements.value[index].visible = checkEnableWhenConditions(element.enableWhen[0])
+            let filteredQuestion: QuestionnaireElement | undefined  = questionnaireElements.value?.find((q: any) => {
+                if(element.enableWhen) return toRaw(q).linkId === element.enableWhen[0].question}) ;
+            questionnaireElements.value[index].visible = checkEnableWhenConditions(element.enableWhen[0], filteredQuestion)
 
         }
     });
@@ -21,12 +22,11 @@ function setVisibility() {
 
 }
 
-function checkEnableWhenConditions(enableWhen: { operator: string, question: string, answerBoolean?: boolean }): boolean {
-    let filteredQuestions: QuestionnaireElement | undefined = questionnaireElements.value?.find((q: any) => {
-        return toRaw(q).linkId === enableWhen.question});
+function checkEnableWhenConditions(enableWhen: { operator: string, question: string, answerBoolean?: boolean }, filteredQuestion: QuestionnaireElement | undefined): boolean {
+
     if (enableWhen.operator === 'exists') {
-        if (! filteredQuestions?.answer) return false;
-        if (filteredQuestions.enableWhen && filteredQuestions?.enableWhen[0]?.answerBoolean !== filteredQuestions?.answer) return false;
+        if (! filteredQuestion?.answer) return false;
+        if (filteredQuestion.enableWhen && filteredQuestion?.enableWhen[0]?.answerBoolean !== filteredQuestion?.answer) return false;
         return true;
     }
     return true;
