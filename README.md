@@ -1,24 +1,32 @@
 # mm_patient
 
 This repository contains the code base for the interview challenge 'Questionnaire - Patient'.
-
-## Design process
 Data for many patients are to be collected in the registry. However, there must always be a Patient Consent for the collection of the data. No forms may be displayed before this.
  
 Within one time point a predefined set of questionnaires should be displayed.
 There are differences in this set, depending on whether it is the first time point (baseline) or a subsequent time point (follow-up).
 
+## Task 1 
+
+
 The following UML diagramm describes the how the Ressources [Questionnaires](https://www.hl7.org/fhir/questionnaire.html), [QuestionnaireResponses](https://build.fhir.org/questionnaireresponse.html) and [Patient](https://build.fhir.org/patient.html) are related. To simplify the diagram, only attributes that support the understanding of those classes are included.
 
-![Alt text](./diagrams/UML.svg)
+![Alt text](./diagrams/Task_UML.svg)
 
+## Design process
 
-To further define the requirements a [figma file](https://www.figma.com/file/xEu9OCRoDs0ONJ4JHoJXVo/mm_patient?type=design&node-id=4%3A484&mode=design&t=Hh2R5MlU82oOpN17-1) was created. In this file a first design draft for the questionnaire tool is defined. 
+To  define the requirements a [figma file](https://www.figma.com/file/xEu9OCRoDs0ONJ4JHoJXVo/mm_patient?type=design&node-id=4%3A484&mode=design&t=Hh2R5MlU82oOpN17-1) was created. In this file a first design draft for the questionnaire tool is defined. 
+
+The next step was to create a class diagramm which is inspired by the FHIR standard but not implements it fully. 
+
+![Alt text](./diagrams/Class_App.svg)
+
 
 The tool should show at the beginning which points in time exist.
 The user of the tool should now select whether a baseline should be created or a follow-up.
 Thereupon, all questionnaires of the new time point are listed. 
 Here it must be checked whether the consent is available, before further questionnaires are displayed.
+
 ## Recommended IDE Setup
 
 - [VSCode](https://code.visualstudio.com/) 
