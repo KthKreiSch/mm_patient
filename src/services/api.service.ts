@@ -52,6 +52,15 @@ class ApiService {
         }
     };
 
+    public async getContexts(): Promise< Context[]  | null>{
+        try{
+            const response = await fetch(`${this.baseUrl}/contexts`);
+            return response.json();
+    
+        } catch {
+            return null;
+        }
+    };
     public async getQuestionnaireElementsByQuestionnaire(questionnaire: Questionnaire): Promise<QuestionnaireElement[] | null> {
         try{
             let questionnaireElements: QuestionnaireElement[] = []

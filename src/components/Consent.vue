@@ -28,11 +28,11 @@ onClick();
         label="Search patient with id" append-inner-icon="mdi-magnify" single-line v-model="patientId"
         @click:append-inner="onClick"></v-text-field>
 
-        <template v-if="patientExists">
+        <template v-if="patientExists" >
             Does {{ selectedPatient[0]?.name }} give consent? 
-            <v-radio-group :v-model="consent">
-                <v-radio label="Yes" value=true ></v-radio>
-                <v-radio label="No" value=false ></v-radio>
+            <v-radio-group  :v-model="consent" >
+                <v-radio label="Yes" value=true @click="$emit('onConsentChange', true);"></v-radio>
+                <v-radio label="No" value=false @click="$emit('onConsentChange', false);"></v-radio>
             </v-radio-group>
         </template>
     </span>

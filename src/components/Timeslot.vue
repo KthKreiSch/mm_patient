@@ -7,7 +7,7 @@ let timeslots: BaseObject[] | null = await ApiService.getTimeSlots().then(res =>
 <template>
   <v-card>
     <v-list >
-        <v-list-item v-for="timeslot in timeslots" :key="timeslot.id" :value="timeslot.id" @click="$emit('onTimeslotChange', timeslot)">
+        <v-list-item v-for="timeslot in timeslots" :key="timeslot.id" :value="timeslot.id" @click="$emit('onTimeslotChange', timeslot.id)">
             <v-list-item-title>{{ timeslot.title }}</v-list-item-title>
         </v-list-item>
     </v-list>
